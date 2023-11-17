@@ -3,7 +3,7 @@ Site web pour la société Myphone qui présente ses produits disponibles et qui
 backoffice.
 
 # Installation
-Téléchargez Composer et utilisez le binaire composer installé sur votre ordinateur pour exécuter ces commandes :
+Téléchargez [Composer](https://getcomposer.org/) et utilisez le binaire composer installé sur votre ordinateur pour exécuter ces commandes :
 ```
 // vous pouvez créer un nouveau projet basé sur le projet Symfony Demo...
 $ composer create-project symfony/symfony-demo my_project
