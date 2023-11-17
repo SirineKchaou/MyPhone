@@ -1,0 +1,64 @@
+{% extends 'index.html.twig' %}
+    {% block body %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Categories</h1> <br>
+                    <ol class="breadcrumb mb-4">
+                        <a href="{{ path('app_category_new') }}"> <button type="button" class="btn btn-primary">Create a new</button> </a>
+                    </ol>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            List of Categories
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+
+                                <tbody>
+                                {% for category in categories %}
+                                <tr>
+                                    <td>{{ category.id }}</td>
+                                    <td>{{ category.name }}</td>
+                                    <td>
+                                        <a href="{{ path('app_category_delete', {'id': category.id}) }}">                                        <span class="material-symbols-outlined">
+delete
+</span></a>
+                                        <a href="{{ path('app_category_edit', {'id': category.id}) }}"><span class="material-symbols-outlined">
+edit
+</span></a>
+                                        <a href="{{ path('app_category_show', {'id': category.id}) }}">                                       <span class="material-symbols-outlined">
+library_books
+</span></a>
+
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">SDE &copy; MyPhone 2023</div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    {% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Signup</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/styleL.css') }}">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            width: 100%;
+            background: #040e1d; /* Dark blue background color */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="login form">
+        <header>
+                <img  src="{{ asset('front/assets/logo.png') }}" width="100px">
+        </header>
+
+                                    {{ form_start(registrationForm) }}
+                                    {{ form_row(registrationForm.email) }}
+                                    {{ form_row(registrationForm.password, {
+                                        label: 'Password'
+                                    }) }}
+        <input type="submit" class="button" value="Signup" style="background-color: #001F3F;">
+                                    {{ form_end(registrationForm) }}
+
+
+
+        <div class="signup">
+        <span class="signup">Already have an account?
+         <a href="{{ path('app_login') }}">Login</a>
+        </span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Product{% endblock %}
+
+{% block body %}
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Creation</h1> <br>
+                <ol class="breadcrumb mb-4">
+                    <a href="{{ path('app_product_index') }}"> <button type="button" class="btn btn-primary">Back to list</button> </a>
+                </ol>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ product.title }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td><img src="{{ asset('uploads/' ~ product.image) }}" alt="Produit Image" width="40px" height="40px"></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ product.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+                <ol class="breadcrumb mb-4">
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}"><button type="button" class="btn btn-primary">Edit</button></a>
+                </ol>
+
+    </div>
+    </main>
+    <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">SDE &copy; MyPhone 2023</div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    {{ include('product/_delete_form.html.twig') }}
+{% endblock %}

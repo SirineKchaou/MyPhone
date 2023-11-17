@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/styleL.css') }}">
+    <style>
+        body {
+            min-height: 100vh;
+            width: 100%;
+            background: #040e1d; /* Dark blue background color */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="login form">
+        <header>   <center>
+
+                <img  src="{{ asset('front/assets/logo.png') }}" width="100px">
+
+
+            </center></header>
+
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+
+        <label for="inputEmail">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="Email" required autofocus>
+        <label for="inputPassword">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="Password" required>
+
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+        <input type="submit" class="button" value="Login" style="background-color: #001F3F;">
+        <div class="signup">
+        <span class="signup">Don't have an account?
+         <a href="{{ path('app_register') }}">Signup</a>
+        </span>
+        </div>
+    </form>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>

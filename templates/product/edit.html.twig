@@ -1,0 +1,29 @@
+
+{% extends 'index.html.twig' %}
+    {% block body %}
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Modification</h1><br>
+                    <ol class="breadcrumb mb-4">
+                        <a href="{{ path('app_product_index') }}"> <button type="button" class="btn btn-primary">Back to list</button> </a>
+                    </ol>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            {{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">SDE &copy; MyPhone 2023</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    {% endblock %}
+
