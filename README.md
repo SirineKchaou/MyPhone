@@ -4,6 +4,7 @@ backoffice.
 
 # Installation
 Téléchargez Composer et utilisez le binaire composer installé sur votre ordinateur pour exécuter ces commandes :
+```
 # vous pouvez créer un nouveau projet basé sur le projet Symfony Demo...
 $ composer create-project symfony/symfony-demo my_project
 
@@ -11,6 +12,7 @@ $ composer create-project symfony/symfony-demo my_project
 $ git clone https://github.com/SirineKchaou/MyPhone.git my_project
 $ cd my_project/
 $ composer install
+```
 
 # Usage
 Téléchargez Symfony CLI et exécutez cette commande :
